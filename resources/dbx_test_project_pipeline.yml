@@ -1,0 +1,12 @@
+# The main pipeline for dbx_test_project
+resources:
+  pipelines:
+    dbx_test_project_pipeline:
+      name: dbx_test_project_pipeline
+      target: dbx_test_project_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
